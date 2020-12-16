@@ -7,6 +7,10 @@ const User = require('./models/users.js');
 const basicAuth = require('./middleware/basic.js')
 const bearerAuth = require('./middleware/bearer.js')
 
+const app = express();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+
 authRouter.post('/signup', async (req, res, next) => {
   try {
     let user = new User(req.body);
@@ -15,7 +19,7 @@ authRouter.post('/signup', async (req, res, next) => {
       user: userRecord,
       token: userRecord.token
     };
-    res.status(200).json(output);
+    res.status(201).json(output);
   } catch (e) {
     next(e.message)
   }
@@ -23,8 +27,8 @@ authRouter.post('/signup', async (req, res, next) => {
 
 authRouter.post('/signin', basicAuth, (req, res, next) => {
   const user = {
-    user: request.user,
-    token: request.user.token
+    user: req.user,
+    token: req.user.token
   };
   res.status(200).json(user);
 });
