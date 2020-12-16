@@ -8,9 +8,9 @@
 
 ### Links and Resources
 
-+ [GitHub Pull request]()
-+ [GitHub Repo]()
-+ [ci/cd]()
++ [GitHub Pull request](https://github.com/stacyburris/bearer-auth/pull/2)
++ [GitHub Repo](https://github.com/stacyburris/bearer-auth)
++ [ci/cd](https://github.com/stacyburris/bearer-auth/actions)
 + [Heroku](https://stacyburris-bearer-auth.herokuapp.com/)
 
 ### Setup
